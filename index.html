@@ -6,122 +6,44 @@
 <title>🌸 AayushMART </title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* -------- Base Styling -------- */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
-body {
-  background: linear-gradient(135deg,#fbc2eb,#a6c1ee,#ff9a9e,#fad0c4);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
-  color:#fff;
-  overflow-x:hidden;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+  background:linear-gradient(135deg,#fbc2eb,#a6c1ee,#ff9a9e,#fad0c4);
+  background-size:400% 400%;animation:gradientMove 12s ease infinite;
+  color:#fff;overflow-x:hidden;
 }
-@keyframes gradientMove {
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-a{color:inherit;text-decoration:none;}
-
-/* -------- Navbar -------- */
-nav {
+@keyframes gradientMove{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+nav{
   position:fixed;top:10px;left:50%;transform:translateX(-50%);
   background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);
   padding:10px 20px;border-radius:40px;display:flex;gap:20px;align-items:center;
   z-index:100;box-shadow:0 6px 20px rgba(0,0,0,0.15);
 }
-nav a { font-weight:600; }
-nav a:hover { color:#ffb6c1; }
-.view-cart-btn {
-  background:linear-gradient(45deg,#ffb6c1,#ff69b4);
-  border:none;border-radius:10px;padding:8px 14px;font-weight:700;cursor:pointer;
-}
-
-/* -------- Floating Petals -------- */
-.flower {
-  position:fixed;top:-40px;font-size:22px;opacity:.8;pointer-events:none;animation:fall linear infinite;
-}
-@keyframes fall {
-  0%{transform:translateY(-10vh);}
-  100%{transform:translateY(110vh);}
-}
-
-/* -------- Header -------- */
-header { text-align:center;padding-top:100px; }
-header h1 { font-size:56px;text-shadow:0 5px 15px rgba(0,0,0,0.2);}
-header p { font-size:18px;margin-top:10px; }
-
-/* -------- Products -------- */
-.products {
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;padding:60px 6vw;
-}
-.product {
-  background:rgba(255,255,255,0.15);border-radius:20px;
-  padding:20px;text-align:center;backdrop-filter:blur(5px);
-  transition:transform .3s ease,box-shadow .3s ease;
-  position:relative;
-}
+nav a{font-weight:600;}
+nav a:hover{color:#ffb6c1;}
+.view-cart-btn{background:linear-gradient(45deg,#ffb6c1,#ff69b4);border:none;border-radius:10px;padding:8px 14px;font-weight:700;cursor:pointer;}
+header{text-align:center;padding-top:100px;}
+header h1{font-size:56px;text-shadow:0 5px 15px rgba(0,0,0,0.2);}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;padding:60px 6vw;}
+.product{background:rgba(255,255,255,0.15);border-radius:20px;padding:20px;text-align:center;backdrop-filter:blur(5px);position:relative;transition:transform .3s,box-shadow .3s;}
 .product:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.25);}
 .product img{width:100%;max-height:200px;object-fit:contain;border-radius:12px;margin-bottom:15px;}
-.product h3{margin:10px 0;}
-.product p{font-size:14px;min-height:40px;}
-.product .price{font-weight:700;margin:10px 0;}
-.shop-now-btn{
-  background:linear-gradient(45deg,#ffb6c1,#ff69b4);color:#fff;
-  border:none;padding:10px 20px;border-radius:10px;cursor:pointer;font-weight:600;
-  transition:opacity .2s,transform .2s;
-}
-.shop-now-btn:hover{opacity:0.9;transform:scale(1.05);}
-.out-of-stock-label {
-  position:absolute;top:15px;right:15px;
-  background:rgba(255,77,77,0.85);
-  color:#fff;padding:6px 12px;border-radius:12px;font-weight:700;
-  font-size:13px;
-}
-
-/* -------- About & Contact -------- */
-.about,.contact {
-  background:rgba(255,255,255,0.1);border-radius:20px;
-  margin:40px 6vw;padding:30px;backdrop-filter:blur(5px);
-}
-.about h2,.contact h2{margin-bottom:15px;}
-.about p,.contact p{line-height:1.6;}
-.contact form{display:flex;flex-direction:column;gap:10px;max-width:500px;margin-top:10px;}
-.contact input,.contact textarea{
-  padding:10px;border-radius:8px;border:none;
-}
-.contact button{
-  background:linear-gradient(45deg,#ffb6c1,#ff69b4);border:none;padding:10px;
-  border-radius:10px;font-weight:700;cursor:pointer;
-}
-
-/* -------- Footer -------- */
+.shop-now-btn{background:linear-gradient(45deg,#ffb6c1,#ff69b4);border:none;padding:10px 20px;border-radius:10px;font-weight:600;cursor:pointer;}
+.out-of-stock-label{position:absolute;top:15px;right:15px;background:rgba(255,77,77,0.85);padding:6px 12px;border-radius:12px;font-weight:700;}
+.about,.contact{background:rgba(255,255,255,0.1);border-radius:20px;margin:40px 6vw;padding:30px;backdrop-filter:blur(5px);}
 footer{text-align:center;margin:30px 0;}
-
-/* -------- Cart Modal -------- */
-#cartModal {
-  position:fixed;inset:0;display:none;align-items:center;justify-content:center;
-  background:rgba(0,0,0,0.45);z-index:200;padding:20px;
-}
-.modal {
-  background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);
-  border-radius:20px;padding:20px;max-width:900px;width:100%;max-height:90vh;overflow:auto;
-  position:relative;color:#fff;
-}
-.modal h2{margin-bottom:10px;}
+#cartModal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:200;padding:20px;}
+.modal{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:20px;padding:20px;max-width:900px;width:100%;max-height:90vh;overflow:auto;color:#fff;position:relative;}
 .close-btn{position:absolute;right:15px;top:10px;cursor:pointer;font-weight:700;}
-.cart-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);
-  border-radius:12px;padding:10px;margin-bottom:10px;}
+.cart-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border-radius:12px;padding:10px;margin-bottom:10px;}
 .cart-item img{width:80px;height:80px;object-fit:cover;border-radius:8px;}
 .cart-details{flex:1;}
-.qty{width:50px;text-align:center;border:none;border-radius:8px;padding:4px;font-weight:700;}
+.qty{width:60px;text-align:center;border:none;border-radius:8px;padding:4px;font-weight:700;}
 .remove{background:none;border:none;color:#ffb6c1;cursor:pointer;font-weight:700;}
 .total-area{margin-top:10px;font-size:18px;font-weight:700;}
-.payment{
-  margin-top:20px;background:rgba(255,255,255,0.1);padding:10px;border-radius:12px;
-  display:flex;flex-wrap:wrap;gap:20px;align-items:center;
-}
+.payment{margin-top:20px;background:rgba(255,255,255,0.1);padding:10px;border-radius:12px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;}
 .payment img{width:140px;height:140px;border-radius:10px;object-fit:cover;}
+.outStockMessage{text-align:center;font-size:20px;color:#ffb6c1;font-weight:700;margin-top:20px;}
 </style>
 </head>
 <body>
@@ -141,52 +63,29 @@ footer{text-align:center;margin:30px 0;}
 
 <section class="products" id="shop">
 
-  <!-- iPhone -->
   <div class="product" data-id="iphone13" data-name="iPhone 13 Pro" data-price="134999" data-img="https://cellucity.co.za/wp-content/uploads/2024/09/iPhone-16-Pro-Max-in-White-Titanium.jpg">
     <span class="out-of-stock-label">Out of Stock ❌</span>
-    <img src="https://cellucity.co.za/wp-content/uploads/2024/09/iPhone-16-Pro-Max-in-White-Titanium.jpg" alt="iPhone 13 Pro">
+    <img src="https://cellucity.co.za/wp-content/uploads/2024/09/iPhone-16-Pro-Max-in-White-Titanium.jpg">
     <h3>📱 iPhone 13 Pro</h3>
     <p>Innovation meets elegance.</p>
     <div class="price">NPR 134,999</div>
     <button class="shop-now-btn add">Add to Cart 🛒</button>
   </div>
 
-  <!-- Acer -->
   <div class="product" data-id="acer" data-name="Acer Swift 5" data-price="114999" data-img="https://th.bing.com/th/id/R.34833ff8079bee600fc9574cd54d0013?rik=NRNlRQR981bf8w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2flaptop-png-laptop-png-image-6750-1280.png&ehk=Y3s2F%2f7gMLsXfMfbJLPqfXYKUx9y7Yl3lSZs6QRwqCU%3d&risl=&pid=ImgRaw&r=0">
     <span class="out-of-stock-label">Out of Stock ❌</span>
-    <img src="https://th.bing.com/th/id/R.34833ff8079bee600fc9574cd54d0013?rik=NRNlRQR981bf8w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2flaptop-png-laptop-png-image-6750-1280.png&ehk=Y3s2F%2f7gMLsXfMfbJLPqfXYKUx9y7Yl3lSZs6QRwqCU%3d&risl=&pid=ImgRaw&r=0" alt="Acer Swift 5">
+    <img src="https://th.bing.com/th/id/R.34833ff8079bee600fc9574cd54d0013?rik=NRNlRQR981bf8w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2flaptop-png-laptop-png-image-6750-1280.png&ehk=Y3s2F%2f7gMLsXfMfbJLPqfXYKUx9y7Yl3lSZs6QRwqCU%3d&risl=&pid=ImgRaw&r=0">
     <h3>💻 Acer Swift 5</h3>
     <p>Light, sleek, and powerful.</p>
     <div class="price">NPR 114,999</div>
     <button class="shop-now-btn add">Add to Cart 🛒</button>
   </div>
 
-  <!-- Anime (Now In Stock) -->
-  <div class="product" data-id="anime" data-name="Adult Anime 18+" data-price="1899" data-img="https://preview.redd.it/makima-pixel-art-portrait-v0-pii9lor7eet91.png?auto=webp&s=eff4de48e0e3d05707d5273e62646e5b94c22617">
-    <img src="https://preview.redd.it/makima-pixel-art-portrait-v0-pii9lor7eet91.png?auto=webp&s=eff4de48e0e3d05707d5273e62646e5b94c22617" alt="Makima Pixel Art">
+  <div class="product" data-id="anime" data-name="Adult Anime 18+" data-price="5000" data-img="https://preview.redd.it/makima-pixel-art-portrait-v0-pii9lor7eet91.png?auto=webp&s=eff4de48e0e3d05707d5273e62646e5b94c22617">
+    <img src="https://preview.redd.it/makima-pixel-art-portrait-v0-pii9lor7eet91.png?auto=webp&s=eff4de48e0e3d05707d5273e62646e5b94c22617">
     <h3>🎨 Adult Anime 18+</h3>
     <p>Pixel art collectible for fans.</p>
-    <div class="price">NPR 1,899</div>
-    <button class="shop-now-btn add">Add to Cart 🛒</button>
-  </div>
-
-  <!-- ASUS -->
-  <div class="product" data-id="asus" data-name="ASUS Gaming Laptop" data-price="179999" data-img="https://tse1.mm.bing.net/th/id/OIP.RxZC1bfOj7a91Z5gXhjhkQHaHV?rs=1&pid=ImgDetMain&o=7&rm=3">
-    <span class="out-of-stock-label">Out of Stock ❌</span>
-    <img src="https://tse1.mm.bing.net/th/id/OIP.RxZC1bfOj7a91Z5gXhjhkQHaHV?rs=1&pid=ImgDetMain&o=7&rm=3" alt="ASUS Gaming Laptop">
-    <h3>🕹️ ASUS Gaming Laptop</h3>
-    <p>RTX-class graphics for serious gamers.</p>
-    <div class="price">NPR 179,999</div>
-    <button class="shop-now-btn add">Add to Cart 🛒</button>
-  </div>
-
-  <!-- RGB PC -->
-  <div class="product" data-id="pc" data-name="RGB Gaming PC" data-price="199999" data-img="https://png.pngtree.com/png-clipart/20250107/original/pngtree-vibrant-rgb-gaming-pc-setup-png-image_20124671.png">
-    <span class="out-of-stock-label">Out of Stock ❌</span>
-    <img src="https://png.pngtree.com/png-clipart/20250107/original/pngtree-vibrant-rgb-gaming-pc-setup-png-image_20124671.png" alt="RGB Gaming PC">
-    <h3>⚡ RGB Gaming PC</h3>
-    <p>Powerful and vibrant — stream ready.</p>
-    <div class="price">NPR 199,999</div>
+    <div class="price">NPR 5,000</div>
     <button class="shop-now-btn add">Add to Cart 🛒</button>
   </div>
 
@@ -195,101 +94,79 @@ footer{text-align:center;margin:30px 0;}
 <section class="about" id="about">
   <h2>About AayushMART</h2>
   <p>AayushMART brings together technology, gaming, and anime with an aesthetic touch. Every product is curated for style, performance, and quality.</p>
-  <p>Join our community on <a href="https://discord.gg/DZeGVEAgyY" target="_blank">Discord 🌐</a> to connect, share, and stay updated!</p>
-</section>
-
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: ayushdangi116@gmail.com</p>
-  <p>Discord: <a href="https://discord.gg/DZeGVEAgyY" target="_blank">Join our community</a></p>
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea rows="4" placeholder="Message"></textarea>
-    <button type="submit">Send</button>
-  </form>
+  <p>Join our community on <a href="https://discord.gg/DZeGVEAgyY" target="_blank">Discord 🌐</a>!</p>
 </section>
 
 <footer>🌸 AayushMART © 2018 🌸</footer>
 
-<!-- Cart Modal -->
 <div id="cartModal">
   <div class="modal">
     <span class="close-btn" id="closeCart">✕</span>
     <h2>Your Cart</h2>
     <div id="cartItems"></div>
-    <div class="total-area">Total: NPR <span id="total">0.00</span></div>
+    <div class="total-area" id="totalSection"></div>
     <div class="payment">
       <div>
         <p><b>Pay with eSewa</b></p>
         <p>ESewa ID: <b>9800000000</b></p>
       </div>
-      <img src="https://tse2.mm.bing.net/th/id/OIP.mK2kr2iSUYk_Fvz9c5LDhQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="QR Code">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.mK2kr2iSUYk_Fvz9c5LDhQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
     </div>
   </div>
 </div>
 
 <script>
-/* --- Floating petals --- */
-for(let i=0;i<15;i++){
-  const f=document.createElement('div');
-  f.className='flower';f.textContent='🌸';
-  f.style.left=Math.random()*100+'vw';
-  f.style.animationDuration=(5+Math.random()*10)+'s';
-  f.style.fontSize=(14+Math.random()*20)+'px';
-  document.body.appendChild(f);
-}
-
-/* --- Cart logic --- */
 let cart={};
-
-function renderCart(){
-  const cartDiv=document.getElementById('cartItems');
-  cartDiv.innerHTML='';
-  let total=0;
-  for(const id in cart){
-    const item=cart[id];
-    const row=document.createElement('div');
-    row.className='cart-item';
-    row.innerHTML=`
-      <img src="${item.img}">
-      <div class="cart-details">
-        <div><b>${item.name}</b></div>
-        <div>NPR ${item.price.toLocaleString()}</div>
-      </div>
-      <input type="number" class="qty" value="${item.qty}" min="1" disabled>
-      <button class="remove">✖</button>
-    `;
-    row.querySelector('.remove').addEventListener('click',()=>{
-      delete cart[id];
-      renderCart();
-    });
-    cartDiv.appendChild(row);
-    total+=item.price*item.qty;
-  }
-  document.getElementById('total').textContent=total.toLocaleString();
-}
+function openCart(){document.getElementById('cartModal').style.display='flex';renderCart();}
+document.getElementById('closeCart').onclick=()=>document.getElementById('cartModal').style.display='none';
+document.getElementById('viewCart').onclick=openCart;
 
 document.querySelectorAll('.add').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const p=btn.closest('.product');
     const id=p.dataset.id;
+    const name=p.dataset.name;
+    const price=parseFloat(p.dataset.price);
+    const img=p.dataset.img;
     if(p.querySelector('.out-of-stock-label')){
-      alert('Sorry, this item is out of stock!');
+      // show out-of-stock inside billing panel
+      document.getElementById('cartItems').innerHTML=`<div class="outStockMessage">${name} is currently Out of Stock ❌</div>`;
+      document.getElementById('totalSection').innerHTML="";
+      openCart();
       return;
     }
-    if(!cart[id]) cart[id]={name:p.dataset.name,price:parseFloat(p.dataset.price),qty:1,img:p.dataset.img};
+    if(!cart[id]) cart[id]={name,price,img,qty:1};
+    else cart[id].qty++;
     openCart();
   });
 });
 
-function openCart(){
-  document.getElementById('cartModal').style.display='flex';
-  renderCart();
+function renderCart(){
+  const c=document.getElementById('cartItems');
+  const t=document.getElementById('totalSection');
+  c.innerHTML='';
+  let total=0;
+  for(const id in cart){
+    const i=cart[id];
+    const row=document.createElement('div');
+    row.className='cart-item';
+    row.innerHTML=`
+      <img src="${i.img}">
+      <div class="cart-details"><b>${i.name}</b><br>NPR ${i.price.toLocaleString()}</div>
+      <input type="number" class="qty" value="${i.qty}" min="1">
+      <button class="remove">✖</button>`;
+    row.querySelector('.qty').addEventListener('change',e=>{
+      const q=parseInt(e.target.value);
+      if(q>0){i.qty=q;renderCart();}
+    });
+    row.querySelector('.remove').addEventListener('click',()=>{
+      delete cart[id];renderCart();
+    });
+    c.appendChild(row);
+    total+=i.price*i.qty;
+  }
+  t.innerHTML=`Total: NPR ${total.toLocaleString()}`;
 }
-document.getElementById('viewCart').onclick=openCart;
-document.getElementById('closeCart').onclick=()=>document.getElementById('cartModal').style.display='none';
 </script>
-
 </body>
 </html>
